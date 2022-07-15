@@ -43,7 +43,7 @@ def stats(update, context):
             f'<b>├  🎮 Rᴀᴍ : {memory}%</b>\n' \
             f'<b>├  💽 Dɪsᴋ : {disk}%</b>\n' \
             f'<b>│</b>\n' \
-            f'<b>╰──《 ☣️ @SparkXcloud ☣️ 》</b>'
+            f'<b>╰──《 MADE BY ROBIN 》</b>'
     update.effective_message.reply_photo(IMAGE_URL, stats, parse_mode=ParseMode.HTML)
 
 
@@ -53,12 +53,12 @@ This bot can mirror all your links to Google Drive!
 Type /{BotCommands.HelpCommand} to get a list of available commands
 '''
     buttons = button_build.ButtonMaker()
-    buttons.buildbutton("Repo", "https://github.com/Spark-X-Cloud/SparkXcloud-Gdrive-MirrorBot")
-    buttons.buildbutton("Channel", "https://t.me/SparkXcloud")
+    buttons.buildbutton("Owner", "https://t.me/RobinsonMontty")
+    buttons.buildbutton("Channel", "https://t.me/torrentmirrorgroups")
     reply_markup = InlineKeyboardMarkup(buttons.build_menu(2))
     if CustomFilters.authorized_user(update) or CustomFilters.authorized_chat(update):
         if update.message.chat.type == "private" :
-            sendMessage(f"Hey I'm Alive 🙂\nSince: <code>{uptime}</code>", context.bot, update)
+            sendMessage(f"Jinda Aaho Bhokadya 🙂\nSince: <code>{uptime}</code>", context.bot, update)
         else :
             sendMarkup(start_string, context.bot, update, reply_markup)
     else :
@@ -66,7 +66,7 @@ Type /{BotCommands.HelpCommand} to get a list of available commands
 
 
 def restart(update, context):
-    restart_message = sendMessage("😐Restarting, Please wait❗", context.bot, update)
+    restart_message = sendMessage("😐 Band-Chalu Karto Thamb❗", context.bot, update)
     # Save restart message object in order to reply to it after restarting
     with open(".restartmsg", "w") as f:
         f.truncate(0)
@@ -77,8 +77,8 @@ def restart(update, context):
 
 def ping(update, context):
     start_time = int(round(time.time() * 1000))
-    reply = sendMessage("⛔Starting Ping", context.bot, update)
-    end_time = int(round(time.time() * 1000))
+    reply = sendMessage("⛔ Payga..Signal", context.bot, update)
+    end_time = int(round(time.time() * 100))
     editMessage(f'{end_time - start_time} ms', reply)
 
 
@@ -218,7 +218,7 @@ def main():
     if os.path.isfile(".restartmsg"):
         with open(".restartmsg") as f:
             chat_id, msg_id = map(int, f)
-        bot.edit_message_text("😎Restarted successfully❗", chat_id, msg_id)
+        bot.edit_message_text("😎 Jhala Re.. Bhokya❗", chat_id, msg_id)
         os.remove(".restartmsg")
     bot.set_my_commands(botcmds)
 
